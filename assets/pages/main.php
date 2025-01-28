@@ -14,7 +14,8 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title></title>
+    
+    <title>Get Any job everywhere in nepal | Rojgar Nepal</title>
   </head>
   <body>
     <nav>
@@ -32,7 +33,21 @@
         <li><a href="#job">Jobs</a></li>
         <li><a href="#service">Services</a></li>
         <li><a href="#client">Client</a></li>
-        <li><button class="btn"><a style="color: white; font-weight: bold;" href="signup.html">Register</a></button></li>
+        <?php
+
+if (isset($_SESSION['auth']) && $_SESSION['auth']) {
+          ?>
+        <li><a href="logout.php">Logout</a></li>
+        <?php
+        }else{
+?>
+        
+        <li><button class="btn"><a style="color: white; font-weight: bold;" href="?signup">Register</a></button></li>
+        
+
+      <?php  
+      }
+?>
       </ul>
     </nav>
     <header class="section__container header__container" id="home">
@@ -176,7 +191,7 @@
       <div class="job__grid">
         <div class="job__card">
           <div class="job__card__header">
-            <img src="assets/figma.png" alt="job" />
+            <img src="assets/img/figma.png" alt="job" />
             <div>
               <h5>Figma</h5>
               <h6>USA</h6>
