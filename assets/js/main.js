@@ -130,3 +130,16 @@ function handleScroll() {
 
 // Add scroll event listener
 window.addEventListener("scroll", handleScroll);
+document.getElementById('toggleJobForm').addEventListener('click', function() {
+  var container = document.getElementById('jobFormContainer');
+  if (container.style.display === 'none') {
+    container.style.display = 'block';
+    fetch('job-post-form.php')
+      .then(response => response.text())
+      .then(data => {
+        container.innerHTML = data;
+      });
+  } else {
+    container.style.display = 'none';
+  }
+});
